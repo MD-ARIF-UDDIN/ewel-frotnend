@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Light Theme - Enhanced Color Palette */
+        --background: 255 255 255;
+        --foreground: 15 23 42;
+        --card: 255 255 255;
+        --card-foreground: 15 23 42;
+        --popover: 255 255 255;
+        --popover-foreground: 15 23 42;
+
+        /* Primary Brand Colors - Enhanced Blue System */
+        --primary: 59 130 246;
+        --primary-foreground: 255 255 255;
+        --primary-hover: 37 99 235;
+        --primary-light: 147 197 253;
+        --primary-dark: 29 78 216;
+
+        /* Secondary Colors - Sophisticated Gray-Blue */
+        --secondary: 248 250 252;
+        --secondary-foreground: 51 65 85;
+        --secondary-hover: 241 245 249;
+        --secondary-light: 226 232 240;
+        --secondary-dark: 148 163 184;
+
+        /* Accent Colors - Cyan/Teal System */
+        --accent: 236 254 255;
+        --accent-foreground: 14 116 144;
+        --accent-hover: 207 250 254;
+        --accent-light: 165 243 252;
+        --accent-dark: 8 145 178;
+
+        /* Muted Colors - Refined Grays */
+        --muted: 248 250 252;
+        --muted-foreground: 100 116 139;
+        --muted-hover: 241 245 249;
+        --muted-light: 226 232 240;
+        --muted-dark: 71 85 105;
+
+        /* Status Colors - Professional Palette */
+        --success: 34 197 94;
+        --success-foreground: 255 255 255;
+        --success-light: 187 247 208;
+        --success-dark: 21 128 61;
+
+        --warning: 251 191 36;
+        --warning-foreground: 15 23 42;
+        --warning-light: 254 240 138;
+        --warning-dark: 217 119 6;
+
+        --destructive: 239 68 68;
+        --destructive-foreground: 255 255 255;
+        --destructive-light: 252 165 165;
+        --destructive-dark: 185 28 28;
+
+        --info: 59 130 246;
+        --info-foreground: 255 255 255;
+        --info-light: 191 219 254;
+        --info-dark: 29 78 216;
+
+        /* Borders and Inputs */
+        --border: 226 232 240;
+        --border-light: 241 245 249;
+        --border-dark: 203 213 225;
+        --input: 226 232 240;
+        --input-focus: 59 130 246;
+        --ring: 59 130 246;
+
+        /* Surface Colors */
+        --surface: 255 255 255;
+        --surface-hover: 248 250 252;
+        --surface-active: 241 245 249;
+        --surface-variant: 226 232 240;
+
+        /* Radius */
+        --radius: 0.75rem;
+
+        /* Enhanced Gradients */
+        --gradient-primary: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(147 51 234) 100%);
+        --gradient-secondary: linear-gradient(135deg, rgb(16 185 129) 0%, rgb(59 130 246) 100%);
+        --gradient-accent: linear-gradient(135deg, rgb(14 116 144) 0%, rgb(59 130 246) 100%);
+        --gradient-success: linear-gradient(135deg, rgb(34 197 94) 0%, rgb(16 185 129) 100%);
+        --gradient-warning: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(245 158 11) 100%);
+        --gradient-danger: linear-gradient(135deg, rgb(239 68 68) 0%, rgb(220 38 38) 100%);
+        --gradient-surface: linear-gradient(135deg, rgb(248 250 252) 0%, rgb(241 245 249) 100%);
+
+        /* Enhanced Shadows */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        --shadow-glow: 0 0 20px rgb(59 130 246 / 0.3);
+    }
+
+    .dark {
+        /* Dark Theme - Enhanced for Better Readability */
+        --background: 15 23 42;
+        --foreground: 248 250 252;
+        --card: 30 41 59;
+        --card-foreground: 248 250 252;
+        --popover: 30 41 59;
+        --popover-foreground: 248 250 252;
+
+        /* Primary Colors - Brighter for Dark Mode */
+        --primary: 129 140 248;
+        --primary-foreground: 15 23 42;
+        --primary-hover: 165 180 252;
+        --primary-light: 196 205 254;
+        --primary-dark: 99 102 241;
+
+        /* Secondary Colors - Better Contrast */
+        --secondary: 51 65 85;
+        --secondary-foreground: 241 245 249;
+        --secondary-hover: 71 85 105;
+        --secondary-light: 100 116 139;
+        --secondary-dark: 30 41 59;
+
+        /* Accent Colors - Cyan with Better Visibility */
+        --accent: 34 211 238;
+        --accent-foreground: 15 23 42;
+        --accent-hover: 103 232 249;
+        --accent-light: 165 243 252;
+        --accent-dark: 8 145 178;
+
+        /* Muted Colors - Improved Contrast */
+        --muted: 51 65 85;
+        --muted-foreground: 203 213 225;
+        --muted-hover: 71 85 105;
+        --muted-light: 100 116 139;
+        --muted-dark: 30 41 59;
+
+        /* Status Colors - High Contrast for Dark Mode */
+        --success: 74 222 128;
+        --success-foreground: 15 23 42;
+        --success-light: 134 239 172;
+        --success-dark: 34 197 94;
+
+        --warning: 251 191 36;
+        --warning-foreground: 15 23 42;
+        --warning-light: 254 215 170;
+        --warning-dark: 217 119 6;
+
+        --destructive: 248 113 113;
+        --destructive-foreground: 15 23 42;
+        --destructive-light: 252 165 165;
+        --destructive-dark: 220 38 38;
+
+        --info: 129 140 248;
+        --info-foreground: 15 23 42;
+        --info-light: 196 205 254;
+        --info-dark: 99 102 241;
+
+        /* Borders and Inputs - Better Definition */
+        --border: 71 85 105;
+        --border-light: 100 116 139;
+        --border-dark: 51 65 85;
+        --input: 71 85 105;
+        --input-focus: 129 140 248;
+        --ring: 129 140 248;
+
+        /* Surface Colors - Proper Layering */
+        --surface: 30 41 59;
+        --surface-hover: 51 65 85;
+        --surface-active: 71 85 105;
+        --surface-variant: 100 116 139;
+
+        /* Enhanced Dark Gradients - More Vibrant */
+        --gradient-primary: linear-gradient(135deg, rgb(129 140 248) 0%, rgb(99 102 241) 100%);
+        --gradient-secondary: linear-gradient(135deg, rgb(74 222 128) 0%, rgb(129 140 248) 100%);
+        --gradient-accent: linear-gradient(135deg, rgb(34 211 238) 0%, rgb(129 140 248) 100%);
+        --gradient-success: linear-gradient(135deg, rgb(74 222 128) 0%, rgb(34 197 94) 100%);
+        --gradient-warning: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(217 119 6) 100%);
+        --gradient-danger: linear-gradient(135deg, rgb(248 113 113) 0%, rgb(220 38 38) 100%);
+        --gradient-surface: linear-gradient(135deg, rgb(51 65 85) 0%, rgb(71 85 105) 100%);
+
+        /* Enhanced Dark Shadows - More Prominent */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+        --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.6);
+        --shadow-glow: 0 0 20px rgb(129 140 248 / 0.4);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground font-inter antialiased;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-poppins font-semibold;
+    }
+}
+
+@layer components {
+
+    /* Enhanced Gradient Text */
+    .gradient-text {
+        @apply bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent;
+    }
+
+    .gradient-text-secondary {
+        @apply bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent;
+    }
+
+    .gradient-text-accent {
+        @apply bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent;
+    }
+
+    /* Enhanced Gradient Backgrounds */
+    .gradient-bg-primary {
+        background: var(--gradient-primary);
+    }
+
+    .gradient-bg-secondary {
+        background: var(--gradient-secondary);
+    }
+
+    .gradient-bg-accent {
+        background: var(--gradient-accent);
+    }
+
+    .gradient-bg-success {
+        background: var(--gradient-success);
+    }
+
+    .gradient-bg-warning {
+        background: var(--gradient-warning);
+    }
+
+    .gradient-bg-danger {
+        background: var(--gradient-danger);
+    }
+
+    .gradient-bg-surface {
+        background: var(--gradient-surface);
+    }
+
+    /* Enhanced Glass Effects */
+    .glass {
+        @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/20 dark:border-slate-700/50;
+    }
+
+    .glass-dark {
+        @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30;
+    }
+
+    .glass-card {
+        @apply bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-gray-200/50 dark:border-slate-600/50;
+    }
+
+    .glass-sidebar {
+        @apply bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-r border-gray-100 dark:border-slate-700;
+    }
+
+    /* Enhanced Modern Shadows */
+    .shadow-modern {
+        box-shadow: var(--shadow-md);
+    }
+
+    .shadow-modern-lg {
+        box-shadow: var(--shadow-lg);
+    }
+
+    .shadow-modern-xl {
+        box-shadow: var(--shadow-xl);
+    }
+
+    .shadow-glow {
+        box-shadow: var(--shadow-glow);
+    }
+
+    /* Dark Mode Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-gray-100 dark:bg-slate-700 rounded-full;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 dark:bg-slate-500 rounded-full hover:bg-gray-400 dark:hover:bg-slate-400;
+    }
+
+    /* Enhanced Button Styles */
+    .btn-glass {
+        @apply bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300;
+    }
+
+    .btn-glass-dark {
+        @apply bg-gray-900/10 backdrop-blur-sm border border-gray-700/30 hover:bg-gray-900/20;
+    }
+
+    /* Theme Toggle Styles */
+    .theme-toggle {
+        @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    }
+
+    .theme-toggle-light {
+        @apply bg-gray-200 hover:bg-gray-300;
+    }
+
+    .theme-toggle-dark {
+        @apply bg-primary hover:bg-primary-hover;
+    }
+
+    .theme-toggle-thumb {
+        @apply inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out;
+    }
+
+    .theme-toggle-thumb-light {
+        @apply translate-x-1;
+    }
+
+    .theme-toggle-thumb-dark {
+        @apply translate-x-6;
+    }
+
+    /* Card Enhancements */
+    .card-elevated {
+        @apply bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 shadow-lg dark:shadow-xl;
+    }
+
+    .card-interactive {
+        @apply hover:shadow-modern-lg dark:hover:shadow-glow transition-all duration-300 hover:-translate-y-1;
+    }
+
+    /* Input Enhancements */
+    .input-enhanced {
+        @apply bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 focus:border-primary dark:focus:border-primary-light focus:ring-1 focus:ring-primary dark:focus:ring-primary-light text-gray-900 dark:text-gray-100;
+    }
+
+    /* Navigation Enhancements */
+    .nav-item {
+        @apply text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200;
+    }
+
+    .nav-item-active {
+        @apply text-primary dark:text-primary-light bg-primary/10 dark:bg-primary/20;
+    }
+
+    /* Service Card Enhancements */
+    .service-card-glow {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .service-card-glow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .dark .service-card-glow::before {
+        background: linear-gradient(45deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+    }
+
+    .service-card-glow:hover::before {
+        opacity: 1;
+    }
+
+    /* Glass Input and Select Styles for Dark Mode */
+    .glass-input {
+        @apply bg-white/10 dark:bg-slate-700/50 backdrop-blur-md border border-white/20 dark:border-slate-600/50 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-primary-light/50 focus:bg-white/20 dark:focus:bg-slate-700/70 focus:border-blue-300/50 dark:focus:border-primary-light/50 transition-all duration-300 hover:bg-white/15 dark:hover:bg-slate-700/60 shadow-sm;
+    }
+
+    .glass-select {
+        @apply bg-white/10 dark:bg-slate-700/50 backdrop-blur-md border border-white/20 dark:border-slate-600/50 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-primary-light/50 focus:bg-white/20 dark:focus:bg-slate-700/70 focus:border-blue-300/50 dark:focus:border-primary-light/50 transition-all duration-300 hover:bg-white/15 dark:hover:bg-slate-700/60 shadow-sm;
+    }
+
+    /* Enhanced Dark Mode Text Visibility */
+    .dark .text-gray-900 {
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+    }
+
+    .dark .text-gray-800 {
+        color: rgb(241 245 249) !important;
+        /* slate-200 */
+    }
+
+    .dark .text-gray-700 {
+        color: rgb(226 232 240) !important;
+        /* slate-300 */
+    }
+
+    .dark .text-gray-600 {
+        color: rgb(203 213 225) !important;
+        /* slate-300 */
+    }
+
+    .dark .text-gray-500 {
+        color: rgb(148 163 184) !important;
+        /* slate-400 */
+    }
+
+    .dark .text-gray-400 {
+        color: rgb(148 163 184) !important;
+        /* slate-400 */
+    }
+
+    .dark .text-gray-300 {
+        color: rgb(203 213 225) !important;
+        /* slate-300 */
+    }
+
+    .dark .text-gray-200 {
+        color: rgb(226 232 240) !important;
+        /* slate-300 */
+    }
+
+    .dark .text-gray-100 {
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+    }
+
+    /* Enhanced Background Colors */
+    .dark .bg-white {
+        background-color: rgb(30 41 59) !important;
+        /* slate-700 */
+    }
+
+    .dark .bg-gray-50 {
+        background-color: rgb(15 23 42) !important;
+        /* slate-800 */
+    }
+
+    .dark .bg-gray-100 {
+        background-color: rgb(51 65 85) !important;
+        /* slate-600 */
+    }
+
+    .dark .bg-gray-200 {
+        background-color: rgb(71 85 105) !important;
+        /* slate-500 */
+    }
+
+    /* Enhanced Input and Form Elements */
+    .dark input:not([type="range"]),
+    .dark select,
+    .dark textarea {
+        background-color: rgb(51 65 85) !important;
+        /* slate-600 */
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+        border-color: rgb(71 85 105) !important;
+        /* slate-500 */
+    }
+
+    .dark input::placeholder,
+    .dark select::placeholder,
+    .dark textarea::placeholder {
+        color: rgb(148 163 184) !important;
+        /* slate-400 */
+    }
+
+    .dark option {
+        background-color: rgb(51 65 85) !important;
+        /* slate-600 */
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+    }
+
+    /* Enhanced Table Styling */
+    .dark table {
+        background-color: rgb(30 41 59) !important;
+        /* slate-700 */
+    }
+
+    .dark thead th {
+        background-color: rgb(51 65 85) !important;
+        /* slate-600 */
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+        border-color: rgb(71 85 105) !important;
+        /* slate-500 */
+    }
+
+    .dark tbody td {
+        color: rgb(226 232 240) !important;
+        /* slate-300 */
+        border-color: rgb(71 85 105) !important;
+        /* slate-500 */
+    }
+
+    .dark tbody tr:hover {
+        background-color: rgb(51 65 85) !important;
+        /* slate-600 */
+    }
+
+    /* Enhanced Badge Colors */
+    .dark .badge,
+    .dark [class*="badge"] {
+        background-color: rgb(51 65 85) !important;
+        /* slate-600 */
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+    }
+
+    /* Enhanced Card Elements */
+    .dark .card,
+    .dark [class*="card"] {
+        background-color: rgb(30 41 59) !important;
+        /* slate-700 */
+        border-color: rgb(71 85 105) !important;
+        /* slate-500 */
+    }
+
+    .dark .card-header,
+    .dark .card-content,
+    .dark .card-footer {
+        color: rgb(226 232 240) !important;
+        /* slate-300 */
+    }
+
+    .dark .card-title {
+        color: rgb(248 250 252) !important;
+        /* slate-100 */
+    }
+
+    .dark .card-description {
+        color: rgb(203 213 225) !important;
+        /* slate-300 */
+    }
+
+    /* Enhanced Link Colors */
+    .dark a {
+        color: rgb(129 140 248) !important;
+        /* indigo-400 */
+    }
+
+    .dark a:hover {
+        color: rgb(165 180 252) !important;
+        /* indigo-300 */
+    }
+
+    /* Enhanced Icon Colors */
+    .dark svg,
+    .dark [class*="lucide"] {
+        color: inherit;
+    }
+
+    /* Enhanced Alert and Modal Colors */
+    .dark .alert,
+    .dark .modal,
+    .dark .dropdown {
+        background-color: rgb(30 41 59) !important;
+        /* slate-700 */
+        border-color: rgb(71 85 105) !important;
+        /* slate-500 */
+        color: rgb(226 232 240) !important;
+        /* slate-300 */
+    }
+
+    /* Enhanced Status Colors for Dark Mode */
+    .dark .text-blue-600 {
+        color: rgb(96 165 250) !important;
+        /* blue-400 */
+    }
+
+    .dark .text-green-600 {
+        color: rgb(74 222 128) !important;
+        /* green-400 */
+    }
+
+    .dark .text-red-600 {
+        color: rgb(248 113 113) !important;
+        /* red-400 */
+    }
+
+    .dark .text-yellow-600 {
+        color: rgb(251 191 36) !important;
+        /* yellow-400 */
+    }
+
+    .dark .text-purple-600 {
+        color: rgb(196 181 253) !important;
+        /* purple-300 */
+    }
+
+    .dark .text-indigo-600 {
+        color: rgb(129 140 248) !important;
+        /* indigo-400 */
+    }
+
+    /* Enhanced Muted Text Colors */
+    .dark .text-muted-foreground {
+        color: rgb(148 163 184) !important;
+        /* slate-400 */
+    }
+
+    .dark .text-muted {
+        color: rgb(148 163 184) !important;
+        /* slate-400 */
+    }
+}
